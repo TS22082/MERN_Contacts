@@ -1,7 +1,6 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
 const express = require('express')
-const cors = require('cors')
 const app = express()
 const PORT = 5000
 
@@ -14,7 +13,6 @@ db.once('open', () => console.log('connected to DB'))
 
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
-app.use(cors())
 
 const apiRouter = require('./routes/apiRoutes')
 app.use('/api', apiRouter)
